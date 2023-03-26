@@ -139,17 +139,18 @@ public:
 } // namespace
 
 
-/// engine_info() returns the full name of the current Stockfish version.
-/// For local dev compiles we try to append the commit sha and commit date
-/// from git if that fails only the local compilation date is set and "nogit" is specified:
-/// Stockfish dev-YYYYMMDD-SHA
-/// or
-/// Stockfish dev-YYYYMMDD-nogit
-///
-/// For releases (non dev builds) we only include the version number:
-/// Stockfish version
-
-string engine_info(bool to_uci) {
+/** 
+ * engine_info() returns the full name of the current Stockfish version.
+ * For local dev compiles we try to append the commit sha and commit date
+ * from git if that fails only the local compilation date is set and "nogit" is specified:
+ * Stockfish dev-YYYYMMDD-SHA
+ * or
+ * Stockfish dev-YYYYMMDD-nogit
+ * For releases (non dev builds) we only include the version number:
+ * Stockfish version
+ */
+string engine_info(bool to_uci) 
+{
   stringstream ss;
   ss << "Stockfish " << version << setfill('0');
 
